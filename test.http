@@ -1,0 +1,47 @@
+###
+#
+# Browse Books
+#
+GET http://localhost:4004/catalog/Books?
+&$select=title
+#   &$expand=currency
+#   &sap-language=de
+
+###
+#
+# Get Author wit ID 101
+#
+
+POST http://localhost:4004/catalog/Authors
+Content-Type: application/json
+
+{"ID": 106, "name": " Franz kafka"}
+
+###
+
+
+
+GET http://localhost:4004/catalog/Authors
+
+
+
+###
+#
+# Update Author with ID 104
+#
+POST http://localhost:4004/catalog/Authors
+Content-Type: application/json
+
+{"ID": 101, "name": "Some Author"}
+
+
+###
+#
+# Order a Book
+#
+POST http://localhost:4004/catalog/Orders
+Content-Type: application/json;IEEE754Compatible=true
+
+{"book_ID": 502, "amount": 6}
+
+
